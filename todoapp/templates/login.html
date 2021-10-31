@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if name %}
+    <title>{{name}}</title>
+    {% else %}
+    <title>Todo App</title>
+    {% endif %}
+</head>
+
+<body>
+
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <div class="main_con">
+            <div class="flash_message_con">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <strong class="alert {{ category }}">{{ message }} </strong>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="con_h">
+                <strong>{{name}}</strong>
+            </div>
+            <div class="login_con_div form__group field">
+                {% if form.username.errors %}
+                {% for errors in form.username.errors %}
+                <span style="margin: 10px 2px;color:red;">{{errors}}</span>
+                {{form.username(placeholder="Username", class="form__field c_fields usernamefield error_field", id='username')}}
+                {% endfor %}
+                {% else %}
+                {{form.username(placeholder="Username", class="form__field c_fields usernamefield", id='username')}}
+                {% endif %}
+                <br>
+                {% if form.password.errors %}
+                {% for errors in form.password.errors %}
+                <span style="margin: 10px 2px;color:red;">{{errors}}</span>
+                {{form.password(placeholder="Password ", class="form__field c_fields passwordfield error_field", id='password')}}
+                {% endfor %}
+                {% else %}
+                {{form.password(placeholder="Password ", class="form__field c_fields passwordfield", id='password')}}
+                {% endif %}
+                <br><br>
+                {{ form.login(class="btn loginbtn") }}
+            </div>
+            <span>Don't have an account? <a href="{{url_for('signup')}}"><strong>signup</strong></a>.</span>
+        </div>
+    </form>
+    <p style="font-size:16px;color: gray;">made with ❤️ and 🕛 by <strong>Abdu1salam</strong>.</p>
+</body>
+<script src="../static/main.js"></script>
+
+</html>

@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    background-color:#222222;
+  }
+
+li{
+    text-decoration: none;
+    list-style: none;
+  }
+ul{
+    padding: 0%;
+}
+.header_dash {
+    display: block;
+    position: fixed;
+    top: 20px;
+    width: 100%;
+}
+
+.header_dash > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+div {
+    align-items: center;
+}
+.con_h{
+    color: #fff;
+}
+form{
+    width: 100%;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 80%;
+  }
+
+.form__field {
+    font-family: inherit;
+    width: 300px;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-size: 16px;
+}
+
+.add_field {
+    width: 100%;
+}
+.main_con{
+    display: flex;
+    margin: 0 auto;
+    height: auto;
+    min-height: 500px;
+    width: 80%;
+    flex-direction: column;
+}
+.btn{
+	color:#fff;
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+    margin-left: 30px;
+    margin-top: 15px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+
+.addbtn {
+    background-color: rgb(74, 63, 226);
+}
+
+html body form div.main_con div.con_list ul.todo-cmp__list li div {
+    margin: auto 15px 5px 1px ;
+}
+
+.dellbtn {
+    text-decoration: none;
+    font-size: 15px
+}
+
+.con_list{
+    width: 100%;
+}
+
+
+.todo-cmp__list {
+	background: #ffffff;
+	color: #497081;
+ 	/*padding: 10px 30px;*/
+    padding: 0%;
+	border-radius: 5px;
+	box-shadow: 2px 2px 14px rgba(0,0,0,0.15);
+    list-style: none;
+    width: 100%;
+}
+
+.todo-cmp__list li {
+    padding: 10px 1px;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+
+}
+
+
+div.con_add{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.error_field {
+    padding: 10px;
+    border: 0.5px solid red;
+    font-size: 14px;
+    background-color: rgba(184, 28, 28, 0.15);
+}
+.todo-cmp__list li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+.todo-cmp__list > li > label {
+    padding: 1px 25px;
+}
+
+.todo-cmp__list > li > a{
+    padding: 1px 25px;
+}
+
+.li_span {
+    color: black;
+}
+
+.signup_con_div {
+    min-height: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.login_con_div {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.loginbtn, .singupbtn {
+    background-color: rgb(74, 63, 226);
+    width: 320px;
+    margin-left: 0;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+span {
+    margin: 25px 2px;
+    font-size: 16px;
+    color: silver;
+}
+
+a {
+    color: white;
+}
+
+/* Alerts  ==============================================*/
+
+.flash_message_con{
+    margin: 30px;
+}
+
+.alert {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+  
+.alert_success {
+    background-color: rgba(227, 253, 235, 1);
+    border-color: rgba(38, 179, 3, 1);
+    color: rgba(60, 118, 61, 1);
+}
+  
+.alert_info {
+    background-color: rgba(217, 237, 247, 1);
+    color: rgba(49, 112, 143, 1);
+    border-color: rgba(126, 182, 193, 1);
+}
+  
+  
+.alert_warning {
+    background-color: rgba(252, 248, 227, 1);
+    border-color: rgba(177, 161, 129, 1);
+    color: rgba(138, 109, 59, 1);
+}
+
+.alert_danger {
+    background-color: rgba(248, 215, 218, 1);
+    border-color: rgba(220, 53, 69, 1);
+    color: rgba(114, 28, 36,1);
+}
+
+/*============================================================*/

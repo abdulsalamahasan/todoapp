@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if name %}
+    <title>{{name}}</title>
+    {% else %}
+    <title>Todo App</title>
+    {% endif %}
+</head>
+
+<body>
+
+    <form method="POST" action="">
+        <div class="header_dash">
+            <div class="header_dash_con">
+                <div class="header_dash_items header_left">
+                </div>
+                <div class="header_dash_items header_center">
+                </div>
+                <div class="header_dash_items header_right">
+                    <strong><a href="{{url_for('logout')}}">Logout</a></strong>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="main_con">
+                <div class="flash_message_con">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <strong class="alert {{ category }}">{{ message }} </strong>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="con_h">
+                    <strong>To-Do App</strong>
+                </div>
+                <div class="con_add form__group field">
+                    {{form.input(placeholder="Add to the list: ", class="form__field add_field", id='name')}}
+                    <br><br>
+                    {{ form.addbtn(class="btn addbtn") }}
+                </div>
+                <div class="con_list">
+                    <ul class="todo-cmp__list">
+                        <li>
+                            <label for="todo-01">
+                                <span>Your Tasks:</span>
+                            </label>
+                            <br><br><br><br><br><br>
+                        </li>
+                        {% for i in list %}
+                        {% if i.author == current_user%}
+                        <li>
+                            <label for="todo-01">
+                                {%set counter=1%}
+                                <span style="color: black;"> {{counter+loop.index0}}- </span>
+                                <span class="li_span box-en-{{counter+loop.index0}}"
+                                    id="{{counter}}">{{i.string}}</span>
+                            </label>
+                            <div>
+                                <a class="btn dellbtn" href="{{url_for('dell', task=i.id)}}">Dell</a>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {%endfor%}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p style="font-size:16px;color: gray;">made with ❤️ and 🕛 by <strong>Abdu1salam</strong>.</p>
+</body>
+<script src="../static/main.js"></script>
+
+</html>
